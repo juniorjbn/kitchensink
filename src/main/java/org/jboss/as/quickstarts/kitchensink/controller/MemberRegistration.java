@@ -56,4 +56,8 @@ public class MemberRegistration {
    public void initNewMember() {
       newMember = new Member();
    }
+
+   public String getVersion() {
+      return System.getenv("Vrsao");
+   }
 }
