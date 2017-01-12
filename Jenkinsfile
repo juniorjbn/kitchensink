@@ -19,6 +19,11 @@ stage 'Tests'
   sh 'echo testando antes de promover para prod'
  }
 
+stage 'Approver'
+ node () {
+  input 'Tem certeza disso?'
+}
+
 stage 'Tag to Prod'
  node () {
    openshiftTag(srcStream: "devapp", srcTag: "latest", destStream: "devapp", destTag: "prod")
