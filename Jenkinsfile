@@ -21,12 +21,12 @@ stage 'Tests'
 
 stage 'Tag to Prod'
  node () {
-   openshiftTag(srcStream: "devapp", srcTag: "latest", destStream: "prodapp", destTag: "prod")
+   openshiftTag(srcStream: "devapp", srcTag: "latest", destStream: "devapp", destTag: "prod")
 }
 
 stage 'Prod Check'
  node () {
-  openshiftVerifyDeployment(deployConfig: 'prodapp')
+  openshiftVerifyDeployment(deploymentConfig: 'prodapp')
 }
 
 stage 'slack notification'
