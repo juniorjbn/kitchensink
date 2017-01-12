@@ -25,13 +25,3 @@ stage 'Tests'
  node () {
   sh 'echo testando '
  }
-
-#stage 'Tag to Prod'
-# node () {
-#   openshiftTag(srcStream: "javastg", srcTag: "latest", destStream: "java", destTag: "promoteqa")
-# }
-#
-#stage 'Prod Check'
-# node () {
-#  openshiftVerifydeploy(deployConfig: 'javaprod')
-# }
