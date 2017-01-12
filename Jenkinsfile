@@ -17,7 +17,7 @@ stage 'Check Build'
 stage 'Tests'
  node () {
   sh 'echo testando antes de promover para Prod'
-  sh 'checando minha Super Variavel com OC CLI'
+  sh 'echo checando minha Super Variavel com OC CLI'
   sh 'echo `oc env dc/devapp --list | grep SuperVar | cut -d = -f2`'
  }
 
