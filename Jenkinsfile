@@ -26,7 +26,7 @@ stage 'Tag to Prod'
 
 stage 'Prod Check'
  node () {
-  openshiftVerifydeploy(deployConfig: 'prodapp')
+  openshiftVerifyDeployment(deployConfig: 'prodapp')
 }
 
 stage 'slack notification'
