@@ -21,7 +21,7 @@ stage 'Tests'
 
 stage 'Aprovação'
  node () {
-  input 'Esta versão pode ser promovida para Produção ?', ok: 'YEAH!''
+  input 'Esta versão pode ser promovida para Produção ?', ok: 'YEAH!'
 }
 
 stage 'Tag to Prod'
