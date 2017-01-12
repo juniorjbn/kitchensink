@@ -21,7 +21,7 @@ stage 'Tests'
 
 stage 'Aprovação'
  node () {
-  slackSend channel: 'codehip', color: '#42e2f4', message: "CTO - Favor aprovar o Build do Projeto - ${env.JOB_NAME} - (${GIT_COMMIT})"
+  slackSend channel: 'codehip', color: '#42e2f4', message: "CTO - Favor aprovar o Build do Projeto - ${env.JOB_NAME}"
   input 'Esta versão pode ser promovida para Produção ?'
 }
 
