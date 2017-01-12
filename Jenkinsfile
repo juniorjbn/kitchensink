@@ -4,12 +4,12 @@ stage 'Checkout'
   checkout scm
  }
 
-stage 'STG-Deploy'
+stage 'Build em Dev'
  node () {
   openshiftBuild(buildConfig: 'devapp', showBuildLogs: 'true')
  }
 
-stage 'STG-Check'
+stage 'Check Build'
  node () {
   openshiftVerifyBuild(buildConfig: 'devapp')
  }
@@ -40,4 +40,4 @@ stage 'slack notification'
    sh 'git log -1 --pretty=%B > commit-log.txt'
    GIT_COMMIT=readFile('commit-log.txt').trim()
    slackSend channel: 'codehip', color: '#1e602f', message: "BUILD_Terminado: PROJETO - ${env.JOB_NAME} - (${GIT_COMMIT})"
- }
+}
