@@ -19,9 +19,9 @@ stage 'Tests'
   sh 'echo testando antes de promover para prod'
  }
 
-stage 'Approver'
+stage 'Aprovação'
  node () {
-  input 'Tem certeza disso?'
+  input 'Esta versão pode ser promovida para Produção ?' ok: 'YEAH!''
 }
 
 stage 'Tag to Prod'
