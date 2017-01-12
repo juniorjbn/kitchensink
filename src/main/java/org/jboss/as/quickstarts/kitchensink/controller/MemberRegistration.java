@@ -58,6 +58,6 @@ public class MemberRegistration {
    }
 
    public String getVersion() {
-      return System.getenv("Vrsao");
+      return System.getenv("SuperVar");
    }
 }
